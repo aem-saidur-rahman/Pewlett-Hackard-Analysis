@@ -16,9 +16,9 @@ The purpose of this analysis is to prepare Pewlett-Hackard, a company with sever
 -	The table includes employee number, first name, last name, title, from-date and to-date.
 -	The table displays a list of employees who is going to retire in the next few years.
 -	The list is long and extensive, yet at-a-glance analysis gives us some insights about the query. Some employees appear more than once due to change of title during their career at Pewlett-Hackard. It happened because it contained all the titles that employees acquired while working at Pewlett-Hackard over the years. This resulted in duplicates, some employees appear two times or more; therefore, the number of retiring employees was  incorrect
--	
+	
 <p align="center">  
-<img src="" width="50%" height="50%">
+<img src="https://github.com/aem-saidur-rahman/Pewlett-Hackard-Analysis/blob/main/Resources/emp_non_unique.png" width="50%" height="50%">
 </p>
 <p align="center">  
 <i>Figure : Table with the employee’s data that are retirement-ready</i>
@@ -33,9 +33,9 @@ To retrieve the data, two tables were merged together - employees and titles - w
 -	The table includes employee number, first name, last name, title, from-date and to-date. 
 - The table displays a list of employees who are going to retire in the next few years.
 -	In the table each employee is listed only once, by her or his most recent title.
--	
+	
 <p align="center">  
-<img src="" width="50%" height="50%">
+<img src="https://github.com/aem-saidur-rahman/Pewlett-Hackard-Analysis/blob/main/Resources/emp_unique.png" width="50%" height="50%">
 </p>
 <p align="center">  
 <i>Figure : Table with the employee’s data that are retirement-ready without duplicates</i>
@@ -51,7 +51,7 @@ Query contains the same data as the query above with addition of `distinct_on` c
 -	From this table we can quickly see how many employees with certain title will retire in the next few years.
 
 <p align="center">  
-<img src="" width="30%" height="30%">
+<img src="https://github.com/aem-saidur-rahman/Pewlett-Hackard-Analysis/blob/main/Resources/title_count.png" width="30%" height="30%">
 </p>
 <p align="center">  
 <i>Figure : Table with the employee grouped by title</i>
@@ -64,9 +64,9 @@ In order to retrieve this table I used `GROUP BY ut.title` command, and it is re
 **4.	The employees eligible for the mentorship program**
 -	The table contains employee number, first name, last name, birth date, from date, to date and title. 
 - The table displays a list of employees who is eligible for the mentorship program.
-- 
+ 
 <p align="center">  
-<img src="" width="50%" height="50%">
+<img src="https://github.com/aem-saidur-rahman/Pewlett-Hackard-Analysis/blob/main/Resources/mentorship.png" width="50%" height="50%">
 </p>
 <p align="center">  
 <i>Figure : Table with the employee grouped by title</i>
@@ -86,10 +86,19 @@ As the company is preparing for the upcoming "silver tsunami" a good planning is
 The table **retirement titles** contains all the information about the employees that are about to retire in the next four years. To get the number of positions that will be open in next four years I ran additional query that breaks down how many staff will retire per department. Since every department will be affected in some way this query gives more precise numbers what each department can expect and how many roles will need to be filled. Using "SELECT SUM (COUNT)" query, i got a 90398 roles will need to be filled.
 
 <p align="center">  
-<img src="Graphics/Extra_RolesToFill.PNG" width="40%" height="40%">
+<img src="https://github.com/aem-saidur-rahman/Pewlett-Hackard-Analysis/blob/main/Resources/role_count.png" width="50%" height="50%">
 </p>
 <p align="center">  
-<i>Figure : Sum of retirement-ready employees group by title and department.</i> 
+<i>Figure : Retiring employee total count</i>
+</p>
+
+<br>
+
+<p align="center">  
+<img src="https://github.com/aem-saidur-rahman/Pewlett-Hackard-Analysis/blob/main/Resources/unq_title_dept.png" width="40%" height="40%">
+</p>
+<p align="center">  
+<i>Figure : Retirement-ready employees group by title and department.</i> 
 </p>
 
 
@@ -99,7 +108,7 @@ The table **retirement titles** contains all the information about the employees
 To ensure that are enough qualified staff for training at Pewlett-Hackard I ran a query with additional filter, that returns only employees on higher positions, assuming that those are qualified as mentors. With the command ` WHERE ut.title IN ('Senior Engineer', 'Senior Staff', 'Technique Leader', 'Manager') ` the results include only staff on higher positions. From the table we can see that the mentorship pool is not evenly distributed, in some instances (sales manager and research manager) there is only one candidate. Which is not enough to mentor the next generation of Pewlett-Hackard employees . 
 
 <p align="center">  
-<img src="" width="40%" height="40%">
+<img src="https://github.com/aem-saidur-rahman/Pewlett-Hackard-Analysis/blob/main/Resources/qualified_mentor.png" width="40%" height="40%">
 </p>
 <p align="center">  
 <i>Figure : Sum of qualified, retirement-ready employees group by title and department</i>
